@@ -31,9 +31,9 @@ Your application must make use of the following libraries:
 
 ## Steps to Run
 
-# run 
-npm install
-npm start
+## run 
+### npm install
+### npm start
 
 $ psql -h localhost -U postgres
 

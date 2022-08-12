@@ -35,19 +35,14 @@ Your application must make use of the following libraries:
 npm install
 npm start
 
-# start PostgreSQL
 $ psql -h localhost -U postgres
 
-# create database for dev env
 $ CREATE DATABASE full_stack_dev;
 
-# list out all databases
 $ \dt
 
-# connect to database
 $ \c full_stack_dev
 
-# quit PostgreSQL
 $ \q
 
 ## Script to run tests

@@ -5,14 +5,25 @@ import verifyToken from "../middleware/verifyToken";
 const store = new OrderStore()
 
 const CurrentOrderByUser = async (req: Request, res: Response) => {
- 
-  const orders = await store.getCurrentOrderByUser(parseInt(req.params.userId))
-  res.json(orders)
+  try {
+    const orders = await store.getCurrentOrderByUser(parseInt(req.params.userId))
+    res.json(orders)
+  } catch (error) {
+    res.status(400)
+    res.json(error)
+  }
+  
 }
 
 const index = async (_req: Request, res: Response) => {
-  const orders = await store.index()
-  res.json(orders)
+  try {
+    const orders = await store.index()
+    res.json(orders)
+  } catch (error) {
+    res.status(400)
+    res.json(error)
+  }
+  
 }
 const create = async (req: Request, res: Response) => {
   try {
@@ -31,13 +42,14 @@ const create = async (req: Request, res: Response) => {
 };
 
 const createOrderProduct = async (req: Request, res: Response) => {
-  const orderProduct: Order_Product = {
-    order_id: (req.body.orderId as unknown) as number,
-    product_id: (req.body.productId as unknown) as number,
-    quantity: (req.body.quantity as unknown) as number
-  };
+  
 
   try {
+    const orderProduct: Order_Product = {
+      order_id: (req.body.orderId as unknown) as number,
+      product_id: (req.body.productId as unknown) as number,
+      quantity: (req.body.quantity as unknown) as number
+    };
     const addedProduct = await store.createOrderProduct(orderProduct)
     res.json(addedProduct)
   } catch (err) {

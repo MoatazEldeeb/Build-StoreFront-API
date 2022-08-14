@@ -78,14 +78,14 @@ Indexes:
 Referenced by:  
     TABLE "orders" CONSTRAINT "orders_user_id_fkey" FOREIGN KEY (user_id) REFERENCES users(id)  
 
-             Table "public.order_product"
-   Column   |  Type   | Collation | Nullable | Default
-------------+---------+-----------+----------+---------
- order_id   | integer |           | not null |
- product_id | integer |           | not null |
- quantity   | integer |           |          |
-Indexes:
-    "order_product_pkey" PRIMARY KEY, btree (order_id, product_id)
-Foreign-key constraints:
-    "order_product_order_id_fkey" FOREIGN KEY (order_id) REFERENCES orders(id)
-    "order_product_product_id_fkey" FOREIGN KEY (product_id) REFERENCES products(id)
+>>             Table "public.order_product"  
+>   Column   |  Type   | Collation | Nullable | Default  
+------------+---------+-----------+----------+---------  
+> order_id   | integer |           | not null |  
+> product_id | integer |           | not null |  
+> quantity   | integer |           |          |  
+Indexes:  
+>    "order_product_pkey" PRIMARY KEY, btree (order_id, product_id)  
+Foreign-key constraints:  
+>    "order_product_order_id_fkey" FOREIGN KEY (order_id) REFERENCES orders(id)  
+>    "order_product_product_id_fkey" FOREIGN KEY (product_id) REFERENCES products(id)  

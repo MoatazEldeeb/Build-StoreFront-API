@@ -61,7 +61,7 @@ const createOrderProduct = async (req: Request, res: Response) => {
 
 const orderRoutes = (app: express.Application) => {
   app.get('/orders/users/:userId', verifyToken,CurrentOrderByUser)
-  app.get("/orders", index)
+  app.get("/orders",verifyToken, index)
   app.post("/orders", verifyToken, create)
   app.post("/orders/products", verifyToken, createOrderProduct)
 }

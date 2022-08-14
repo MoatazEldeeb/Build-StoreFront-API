@@ -50,7 +50,7 @@ db-migrate up
 ## Endpoints
 ### Orders
 To GET order by user id:  GET '/orders/users/:userId' [token required]  
-To GET all orders:  GET "/orders"  
+To GET all orders:  GET "/orders"  [token required]
 To POST order:  POST "/orders" [token required]  
     Specifying in the req body(via JSON):   
         userId, completed(boolean)  
